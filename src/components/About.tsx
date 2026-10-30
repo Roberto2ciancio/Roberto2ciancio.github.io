@@ -1,15 +1,13 @@
 import type { CSSProperties } from 'react'
 import { intro } from '../data/cv'
 import { useReveal } from '../hooks/useReveal'
-import portrait from '../assets-src/roberto-portrait.jpg'
+import { images } from '../assets-src'
 
 export default function About() {
   const ref = useReveal<HTMLDivElement>()
   return (
     <section className="about section wrap" id="chi-sono" ref={ref} data-reveal>
-      <h2 className="head about-heading">Chi sono</h2>
-      <img className="about-portrait" src={portrait} alt="Ritratto di Roberto Ciancio" loading="lazy" />
-
+      <h2 className="section-heading about-heading">Chi sono</h2>
       <div className="about-facts">
         {intro.facts.map((fact, i) => (
           <div className="fact" key={fact.label} data-reveal style={{ '--i': i } as CSSProperties}>
@@ -19,33 +17,11 @@ export default function About() {
         ))}
       </div>
 
-      <p className="about-paragraph lead">{intro.paragraph}</p>
-
-      <div className="about-row-2">
-        <p className="small muted about-row-2-label">Percorso</p>
-        <div className="about-lists">
-          <div className="about-list">
-            <p className="small about-list-heading">Istruzione</p>
-            <ul>
-              {intro.education.map((item, i) => (
-                <li key={item.name} data-reveal style={{ '--i': i } as CSSProperties}>
-                  <span className="small">{item.name}</span>
-                  <span className="small muted nums">{item.value}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="about-list">
-            <p className="small about-list-heading">Soft skill</p>
-            <ul>
-              {intro.softSkills.map((item, i) => (
-                <li key={item} data-reveal style={{ '--i': i } as CSSProperties}>
-                  <span className="small">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="about-text">
+        <p className="about-paragraph" data-reveal-scale>
+          <img className="about-portrait" src={images.portrait} alt="Ritratto di Roberto Ciancio" loading="lazy" />
+          {intro.bio}
+        </p>
       </div>
     </section>
   )

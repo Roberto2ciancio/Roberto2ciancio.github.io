@@ -1,64 +1,131 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { profile } from '../data/cv'
-import portrait from '../assets-src/roberto-portrait.jpg'
+import { images } from '../assets-src'
+
+const PANEL_COUNT = 3
+
+function getMotionOk() {
+  return typeof document !== 'undefined' && document.documentElement.classList.contains('motion-ok')
+}
 
 export default function Hero() {
-  const nameRef = useRef<HTMLHeadingElement>(null)
+  const pinRef = useRef<HTMLDivElement>(null)
+  const panelRefs = useRef<(HTMLDivElement | null)[]>([])
+  const photoRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [motionOk] = useState(getMotionOk)
 
-  useEffect(() => {
-    const el = nameRef.current
-    if (!el) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  useLayoutEffect(() => {
+    if (!motionOk) return
+
     let raf = 0
-    const onScroll = () => {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        const progress = Math.min(window.scrollY / window.innerHeight, 1)
-        const scale = 1 - progress * 0.08
-        el.style.transform = `scale(${scale})`
+    let scheduled = false
+
+    const update = () => {
+      scheduled = false
+      const el = pinRef.current
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      const total = rect.height - window.innerHeight
+      const progress = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0
+      const continuous = progress * (PANEL_COUNT - 1)
+
+      panelRefs.current.forEach((panel, i) => {
+        if (!panel) return
+        panel.style.transform = `translateY(${(i - continuous) * 100}%)`
       })
+      photoRefs.current.forEach((photo, i) => {
+        if (!photo) return
+        const distance = continuous - i
+        photo.style.transform = `translateY(${distance * 36}px) scale(${1 + Math.min(Math.abs(distance), 1) * 0.06})`
+      })
+      setActiveIndex(Math.round(continuous))
     }
+
+    const onScroll = () => {
+      if (scheduled) return
+      scheduled = true
+      raf = requestAnimationFrame(update)
+    }
+
+    update()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', onScroll)
       cancelAnimationFrame(raf)
     }
-  }, [])
+  }, [motionOk])
+
+  const panels = [
+    {
+      statement: 'Dai cavi di rete alle interfacce React.',
+      body: 'Sviluppatore fullstack junior a Roma, formato con un bootcamp intensivo EPICODE dopo anni di supporto IT sul campo.',
+      image: images.switchAndNest,
+      alt: 'Switch di rete avvolto in un nido di cavi',
+      action: true,
+    },
+    {
+      statement: 'Dall’hardware al software.',
+      body: 'Ticket, cablaggi, collaudi: la stessa precisione si porta dietro nel codice.',
+      image: images.circuitMacro,
+      alt: 'Primo piano di un circuito stampato',
+      action: false,
+    },
+    {
+      statement: 'Laurea, poi Cybersecurity.',
+      body: 'Due certificazioni già prese, Anthropic Academy ed EPICODE, e l’obiettivo chiaro davanti.',
+      image: images.romanSkyline,
+      alt: 'Tetti di Roma visti dall’alto',
+      action: false,
+    },
+  ]
 
   return (
-    <header className="hero wrap">
-      <div className="hero-row">
-        <div className="hero-top">
-          <p className="hero-pitch">
-            Sviluppatore fullstack junior a Roma — da cablaggi e ticket a React e Spring.
-          </p>
-          <a className="button" href={profile.cvFile} download>
-            Scarica il CV
-          </a>
-        </div>
-
-        <nav className="hero-menu" aria-label="Sezioni della pagina">
+    <header className="hero-pin" ref={pinRef} style={motionOk ? undefined : { height: 'auto' }}>
+      <nav className="hero-nav wrap" aria-label="Sezioni della pagina">
+        <span className="hero-nav-mark">RC</span>
+        <div className="hero-nav-links">
           <a className="link small" href="#esperienza">Esperienza</a>
           <a className="link small" href="#competenze">Competenze</a>
+          <a className="link small" href="#certificazioni">Certificazioni</a>
           <a className="link small" href="#contatti">Contatti</a>
-        </nav>
-      </div>
+        </div>
+      </nav>
 
-      <h1 className="hero-name" ref={nameRef}>
-        ROBERTO
-        <br />
-        CIANCIO
-      </h1>
+      <div className="hero-pin-sticky" style={motionOk ? undefined : { position: 'static', height: 'auto' }}>
+        <h1 className="hero-corner-group">
+          <span className="hero-corner hero-corner-tl">ROBERTO</span>
+          <span className="hero-corner hero-corner-br">CIANCIO</span>
+        </h1>
+        <p className="sr-only">{profile.role}, {profile.city}</p>
 
-      <div className="hero-row hero-row-bottom">
-        <p className="small">Roma · Fullstack Developer</p>
-        <div className="hero-bottom-links">
-          <a className="link small" href={profile.linkedinUrl} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a className="link small" href={profile.githubUrl} target="_blank" rel="noreferrer">GitHub</a>
+        <div className="hero-panels" style={motionOk ? undefined : { position: 'static' }}>
+          {panels.map((panel, i) => (
+            <div
+              className="hero-panel wrap"
+              key={panel.statement}
+              ref={(el) => { panelRefs.current[i] = el }}
+              style={motionOk ? undefined : { position: 'static', transform: 'none' }}
+              inert={motionOk && i !== activeIndex ? true : undefined}
+            >
+              <div className="hero-panel-text">
+                <p className="hero-panel-statement">{panel.statement}</p>
+                <p className="small muted hero-panel-body">{panel.body}</p>
+                {panel.action && (
+                  <a className="button hero-panel-cta" href={profile.cvFile} download>
+                    <span>Scarica il CV</span>
+                  </a>
+                )}
+              </div>
+              <div className="hero-panel-photo">
+                <div className="hero-panel-photo-inner" ref={(el) => { photoRefs.current[i] = el }}>
+                  <img src={panel.image} alt={panel.alt} loading={i === 0 ? 'eager' : 'lazy'} />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      <img className="hero-phone-portrait" src={portrait} alt="Ritratto di Roberto Ciancio" loading="eager" />
     </header>
   )
 }

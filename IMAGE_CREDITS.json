@@ -66,5 +66,53 @@
   "credit": "\"Roman skyline\" by Edmund F. Arras, public domain, via Wikimedia Commons",
   "notes": [],
   "saved": "2026-10-30T09:06:30.746Z"
+ },
+ {
+  "file": "assets/disassembled-laptop.jpg",
+  "media": "image",
+  "ref": "commons:55024438",
+  "title": "Disassembled laptop",
+  "creator": "Tulumnes",
+  "creatorUrl": null,
+  "date": "2017-01-08",
+  "license": "CC BY-SA 4.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:Disassembled_laptop.jpg",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Disassembled_laptop.jpg/1920px-Disassembled_laptop.jpg",
+  "width": 1920,
+  "height": 2560,
+  "bytes": 998374,
+  "credit": "\"Disassembled laptop\" by Tulumnes, CC BY-SA 4.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-10-30T09:49:00.220Z"
+ },
+ {
+  "file": "assets/dz6-2542-a-narrow-cluttered-electronics-shop.jpg",
+  "media": "image",
+  "ref": "commons:189044295",
+  "title": "DZ6 2542 A narrow cluttered electronics shop aisle lined with shelves of components spools of wire and glass display cases overflowing with parts",
+  "creator": "PattayaPatrol",
+  "creatorUrl": null,
+  "date": "2025-12-30",
+  "license": "CC BY-SA 4.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:DZ6_2542_A_narrow_cluttered_electronics_shop_aisle_lined_with_shelves_of_components_spools_of_wire_and_glass_display_cases_overflowing_with_parts.jpg",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/DZ6_2542_A_narrow_cluttered_electronics_shop_aisle_lined_with_shelves_of_components_spools_of_wire_and_glass_display_cases_overflowing_with_parts.jpg/1920px-DZ6_2542_A_narrow_cluttered_electronics_shop_aisle_lined_with_shelves_of_components_spools_of_wire_and_glass_display_cases_overflowing_with_parts.jpg",
+  "width": 1920,
+  "height": 1277,
+  "bytes": 640997,
+  "credit": "\"DZ6 2542 A narrow cluttered electronics shop aisle lined with shelves of components spool\u00e2\u20ac\u00a6\" by PattayaPatrol, CC BY-SA 4.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-10-30T09:49:00.553Z"
  }
 ]

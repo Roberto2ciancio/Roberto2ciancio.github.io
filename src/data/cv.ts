@@ -1,3 +1,5 @@
+import type { ImageKey } from '../assets-src'
+
 export const profile = {
   name: 'Roberto Ciancio',
   role: 'Junior Fullstack Developer',
@@ -12,34 +14,24 @@ export const profile = {
 }
 
 export const intro = {
-  paragraph:
-    "Sviluppatore fullstack junior con formazione intensiva EPICODE ed esperienza sul campo nel supporto IT. Unisco competenze frontend (React, TypeScript) e backend (Java, Spring) a capacità pratiche maturate tra ticket, cablaggi e postazioni di lavoro. Attualmente impegnato in progetti IT per il Comando Generale dei Carabinieri, cerco di crescere contribuendo a prodotti software reali.",
+  bio:
+    "Roberto Ciancio è uno sviluppatore fullstack junior a Roma: dal supporto IT sul campo al codice, con l'obiettivo di completare la laurea in Informatica e proseguire con una magistrale in Cybersecurity.",
   facts: [
     { label: 'Sede', value: 'Roma (RM), Italia' },
-    { label: 'Ruolo', value: 'Junior Fullstack Developer' },
-    { label: 'Lingue', value: 'Italiano · Inglese B1' },
-  ],
-  education: [
-    { name: 'Laurea in Informatica Aziende Digitali', value: 'In corso' },
-    { name: 'Master Full Stack Developer', value: '2025' },
-    { name: 'Diploma di Scienze Umane', value: '2023' },
-  ],
-  softSkills: [
-    'Problem solving',
-    'Teamwork e comunicazione',
-    'Project management',
-    'Pianificazione e organizzazione',
-    'Attenzione ai dettagli',
+    { label: 'Formazione', value: 'EPICODE, 2025' },
+    { label: 'Laurea', value: 'In corso' },
   ],
 }
 
 export const experience = [
   {
     role: 'Supporto Tecnico',
-    place: 'Comando Generale dei Carabinieri · per conto di Intellitronika',
+    place: 'Comando Generale dei Carabinieri',
     period: 'giu 2026 – oggi',
     description:
       "Gestione dei ticket di assistenza e supporto agli utenti finali, configurazione hardware e software delle postazioni, collaudi e stress test dei dispositivi prima della distribuzione, coordinamento con il team Intellitronika per la risoluzione di problemi on-site.",
+    image: 'circuitMacro' as ImageKey,
+    imageAlt: 'Primo piano di un microcontrollore su circuito stampato',
   },
   {
     role: "Tecnico dell'Assistenza",
@@ -47,6 +39,8 @@ export const experience = [
     period: 'nov 2025 – oggi',
     description:
       'Assistenza tecnica hardware e software su postazioni client e server, gestione e tracciamento dei ticket su JIRA, installazione e manutenzione di sistemi Windows, cablaggi e apparati di rete, supporto Help Desk di primo e secondo livello.',
+    image: 'switchAndNest' as ImageKey,
+    imageAlt: 'Switch di rete avvolto in un nido di cavi Cat5',
   },
   {
     role: 'IT Promoter',
@@ -54,6 +48,8 @@ export const experience = [
     period: '2024–2025',
     description:
       'Supporto e promozione di prodotti Google e Microsoft presso i punti vendita, consulenza tecnica ai clienti e demo di prodotto, sviluppo di capacità commerciali e comunicative in contesto retail.',
+    image: 'electronicsShop' as ImageKey,
+    imageAlt: 'Corsia di un negozio di elettronica con scaffali di componenti',
   },
   {
     role: 'Tecnico Informatico',
@@ -61,6 +57,8 @@ export const experience = [
     period: 'mag–ott 2023',
     description:
       'Riparazione di PC fissi e portatili, risoluzione di problemi tecnici e assistenza on-site.',
+    image: 'disassembledLaptop' as ImageKey,
+    imageAlt: 'Un portatile smontato con i componenti interni a vista',
   },
 ]
 
@@ -69,6 +67,21 @@ export const skills = [
   { label: 'Backend', detail: 'Java · Spring · PostgreSQL' },
   { label: 'DevOps', detail: 'Git · GitHub Actions · CI/CD' },
   { label: 'IT & supporto', detail: 'JIRA · Help Desk · Reti' },
+]
+
+export const certifications = [
+  {
+    year: '2026',
+    title: 'AI Capabilities and Limitations',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/jvr8dn5dtvpu',
+  },
+  {
+    year: '2025',
+    title: 'Full-Stack Developer',
+    body: 'EPICODE',
+    verifyUrl: 'https://certificates.epicode.com/0d0abddf-03fe-4b7c-81aa-7f72ea2b174b',
+  },
 ]
 
 export const contactRows = [

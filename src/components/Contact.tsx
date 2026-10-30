@@ -33,7 +33,7 @@ export default function Contact() {
 
   return (
     <section className="contact section wrap" id="contatti" ref={ref} data-reveal>
-      <h2 className="head contact-heading">Contatti</h2>
+      <h2 className="section-heading contact-heading">Contatti</h2>
       <ul className="contact-rows">
         {contactRows.map((row, i) => (
           <li className="contact-row" key={row.label} data-reveal style={{ '--i': i } as CSSProperties}>
