@@ -30,8 +30,8 @@ export const experience = [
     period: 'giu 2026 – oggi',
     description:
       "Gestione dei ticket di assistenza e supporto agli utenti finali, configurazione hardware e software delle postazioni, collaudi e stress test dei dispositivi prima della distribuzione, coordinamento con il team Intellitronika per la risoluzione di problemi on-site.",
-    image: 'circuitMacro' as ImageKey,
-    imageAlt: 'Primo piano di un microcontrollore su circuito stampato',
+    image: 'codeScreen' as ImageKey,
+    imageAlt: 'Editor di codice con sintassi colorata su schermo scuro',
   },
   {
     role: "Tecnico dell'Assistenza",
@@ -39,8 +39,8 @@ export const experience = [
     period: 'nov 2025 – oggi',
     description:
       'Assistenza tecnica hardware e software su postazioni client e server, gestione e tracciamento dei ticket su JIRA, installazione e manutenzione di sistemi Windows, cablaggi e apparati di rete, supporto Help Desk di primo e secondo livello.',
-    image: 'switchAndNest' as ImageKey,
-    imageAlt: 'Switch di rete avvolto in un nido di cavi Cat5',
+    image: 'networkRack' as ImageKey,
+    imageAlt: 'Rack di rete con switch e cablaggio strutturato',
   },
   {
     role: 'IT Promoter',

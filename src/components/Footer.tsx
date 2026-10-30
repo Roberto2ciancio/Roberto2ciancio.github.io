@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <p className="small muted">© {new Date().getFullYear()} {profile.name}</p>
         <p className="small muted footer-credits">
-          Fotografie: Switch-and-nest (J.smith, CC BY-SA 2.5) · Macro RP2350 (Profpcde, CC0) · Roman skyline (Edmund F. Arras, pubblico dominio) · Disassembled laptop (Tulumnes, CC BY-SA 4.0) · Electronics shop (PattayaPatrol, CC BY-SA 4.0), via Wikimedia Commons
+          Fotografie: RustCodeOnScreen (Slashme, CC0) · Cisco Hall Infnet (Bruno de Lima, CC BY-SA 4.0) · Roman skyline (Edmund F. Arras, pubblico dominio) · Disassembled laptop (Tulumnes, CC BY-SA 4.0) · Electronics shop (PattayaPatrol, CC BY-SA 4.0), via Wikimedia Commons
         </p>
       </div>
     </footer>
