@@ -218,7 +218,7 @@
 .proof-table { font-size: var(--step-body); table-layout: fixed; }
 .proof-table tr { transition: background-color var(--t-hover) ease; }
 .proof-table tr:nth-child(even) { background: var(--surface); }
-.proof-table td { padding: 2.5rem 0.75rem; vertical-align: baseline; overflow-wrap: break-word; }
+.proof-table td { padding: 1.15rem 0.75rem; vertical-align: baseline; overflow-wrap: break-word; }
 .proof-table td:first-child { padding-left: 1rem; }
 .proof-table td:last-child { padding-right: 1rem; text-align: right; }
 .proof-year { width: 14%; font-size: var(--step-small); }

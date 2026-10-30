@@ -73,7 +73,7 @@ export default function Hero() {
     },
     {
       statement: 'Laurea, poi Cybersecurity.',
-      body: 'Due certificazioni già prese, Anthropic Academy ed EPICODE, e l’obiettivo chiaro davanti.',
+      body: 'Quindici certificazioni già prese, tra Anthropic Academy ed EPICODE, e l’obiettivo chiaro davanti.',
       image: images.romanSkyline,
       alt: 'Tetti di Roma visti dall’alto',
       action: false,

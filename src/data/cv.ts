@@ -71,10 +71,88 @@ export const skills = [
 
 export const certifications = [
   {
-    year: '2026',
+    year: '27 apr 2026',
     title: 'AI Capabilities and Limitations',
     body: 'Anthropic Academy',
     verifyUrl: 'https://verify.skilljar.com/c/jvr8dn5dtvpu',
+  },
+  {
+    year: '27 apr 2026',
+    title: 'Introduction to Agent Skills',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/3e3qj2xqizk4',
+  },
+  {
+    year: '27 apr 2026',
+    title: 'AI Fluency for Nonprofits',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/f7ja79uy69gh',
+  },
+  {
+    year: '27 apr 2026',
+    title: 'Teaching AI Fluency',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/khxuuss2nzdk',
+  },
+  {
+    year: '27 apr 2026',
+    title: 'Introduction to Subagents',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/daczrvoif3oe',
+  },
+  {
+    year: '27 apr 2026',
+    title: 'Claude on Google Cloud',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/4fkxdfzorf58',
+  },
+  {
+    year: '24 apr 2026',
+    title: 'Introduction to Model Context Protocol',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/grtb69z6x8b2',
+  },
+  {
+    year: '24 apr 2026',
+    title: 'AI Fluency for Educators',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/ekuyyu2rs9tv',
+  },
+  {
+    year: '23 apr 2026',
+    title: 'AI Fluency: Framework & Foundations',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/twkunrnm5goq',
+  },
+  {
+    year: '23 apr 2026',
+    title: 'Building with the Claude API',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/y9rtt6hmgh37',
+  },
+  {
+    year: '17 apr 2026',
+    title: 'Introduction to Claude Cowork',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/9ri4k78747gf',
+  },
+  {
+    year: '17 apr 2026',
+    title: 'Claude Code in Action',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/c5c3g38ud95x',
+  },
+  {
+    year: '15 apr 2026',
+    title: 'Claude Code 101',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/k6hu89o4crnm',
+  },
+  {
+    year: '9 apr 2026',
+    title: 'Claude 101',
+    body: 'Anthropic Academy',
+    verifyUrl: 'https://verify.skilljar.com/c/jscouhoy47ws',
   },
   {
     year: '2025',
