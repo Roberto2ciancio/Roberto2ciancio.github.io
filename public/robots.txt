@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roberto2ciancio.github.io/sitemap.xml
