@@ -2,19 +2,6 @@ import { useState, type CSSProperties } from 'react'
 import { contactRows, profile } from '../data/cv'
 import { useReveal } from '../hooks/useReveal'
 
-function breakable(value: string) {
-  return value.split(/([@/])/).map((part, i) =>
-    part === '@' || part === '/' ? (
-      <span key={i}>
-        {part}
-        <wbr />
-      </span>
-    ) : (
-      part
-    ),
-  )
-}
-
 export default function Contact() {
   const ref = useReveal<HTMLDivElement>()
   const [copied, setCopied] = useState<string | null>(null)
@@ -33,30 +20,30 @@ export default function Contact() {
 
   return (
     <section className="contact section wrap" id="contatti" ref={ref} data-reveal>
-      <h2 className="section-heading contact-heading">Contatti</h2>
-      <ul className="contact-rows">
-        {contactRows.map((row, i) => (
-          <li className="contact-row" key={row.label} data-reveal style={{ '--i': i } as CSSProperties}>
+      <div className="contact-card card">
+        <h2 className="section-heading contact-heading">Scriviamoci</h2>
+        <p className="muted contact-sub">
+          Disponibile per nuove opportunità come sviluppatore fullstack, a Roma e da remoto.
+        </p>
+        <div className="contact-rows">
+          {contactRows.map((row, i) => (
             <a
-              className="contact-row-value link"
+              className="contact-row"
+              key={row.label}
               href={row.href}
               target={row.href.startsWith('http') ? '_blank' : undefined}
               rel={row.href.startsWith('http') ? 'noreferrer' : undefined}
-              aria-label={`${row.label}: ${row.value}`}
               onClick={(e) => handleCopy(e, row.copy, row.label)}
+              data-reveal
+              style={{ '--i': i } as CSSProperties}
             >
-              {copied === row.label ? 'Copiato negli appunti' : breakable(row.value)}
+              <span className="small muted contact-row-label">{row.label}</span>
+              <span className="contact-row-value">{copied === row.label ? 'Copiato negli appunti' : row.value}</span>
             </a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="contact-row contact-greeting" data-reveal style={{ '--i': contactRows.length } as CSSProperties}>
-        <span className="contact-row-value">Scriviamoci</span>
-        <a className="contact-arrow" href={`mailto:${profile.email}`} aria-label="Scrivi un'email a Roberto Ciancio">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          ))}
+        </div>
+        <a className="pill pill-solid contact-cta" href={`mailto:${profile.email}`}>
+          <span>Inviami un'email</span>
         </a>
       </div>
     </section>

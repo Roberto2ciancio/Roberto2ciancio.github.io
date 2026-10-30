@@ -3,7 +3,8 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Work from './components/Work'
 import Skills from './components/Skills'
-import Proof from './components/Proof'
+import ProofAI from './components/ProofAI'
+import ProofFullstack from './components/ProofFullstack'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -14,7 +15,9 @@ function App() {
       <About />
       <Work />
       <Skills />
-      <Proof />
+      <div className="beam wrap" aria-hidden="true" />
+      <ProofAI />
+      <ProofFullstack />
       <Contact />
       <Footer />
     </>
