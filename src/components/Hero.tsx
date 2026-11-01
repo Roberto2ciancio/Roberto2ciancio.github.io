@@ -10,6 +10,7 @@ export default function Hero() {
         <span className="hero-nav-mark">Roberto Ciancio</span>
         <div className="hero-nav-links">
           <a className="link small" href="#esperienza">Esperienza</a>
+          <a className="link small" href="#creazioni">Creazioni</a>
           <a className="link small" href="#competenze">Competenze</a>
           <a className="link small" href="#certificazioni-ai">Certificazioni AI</a>
           <a className="link small" href="#certificazioni-fullstack">Full-Stack</a>

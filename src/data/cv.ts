@@ -23,6 +23,20 @@ export const intro = {
   ],
 }
 
+export const creations = [
+  {
+    name: 'Bere',
+    description:
+      "L'app che ti ricorda di bere: promemoria a orari o a intervalli, una bevuta segnata con un tocco, storico dei tuoi progressi e una classifica con gli amici.",
+    stack: ['React', 'TypeScript', 'Supabase', 'Web Push', 'PWA'],
+    icon: 'https://roberto2ciancio.github.io/bere-app/icon-512.png',
+    appUrl: 'https://roberto2ciancio.github.io/bere-app/',
+    demoUrl: 'https://roberto2ciancio.github.io/bere-app/dev/',
+    install:
+      "Non serve uno store: su iPhone aprila in Safari e scegli Aggiungi alla schermata Home, su Android apri il menu di Chrome e scegli Installa app. La versione senza account è una demo: i dati restano sul tuo telefono.",
+  },
+]
+
 export const experience = [
   {
     role: 'Supporto Tecnico',

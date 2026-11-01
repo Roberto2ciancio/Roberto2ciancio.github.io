@@ -2,6 +2,7 @@ import './App.css'
 import Hero from './components/Hero'
 import About from './components/About'
 import Work from './components/Work'
+import Creations from './components/Creations'
 import Skills from './components/Skills'
 import ProofAI from './components/ProofAI'
 import ProofFullstack from './components/ProofFullstack'
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <About />
       <Work />
+      <Creations />
       <Skills />
       <div className="beam wrap" aria-hidden="true" />
       <ProofAI />
