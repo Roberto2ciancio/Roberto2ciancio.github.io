@@ -23,13 +23,15 @@ export default function Creations() {
               </ul>
               <div className="creation-actions">
                 <a className="pill pill-solid" href={item.appUrl} target="_blank" rel="noreferrer">
-                  <span>Apri l'app</span>
+                  <span>{item.appLabel ?? "Apri l'app"}</span>
                 </a>
-                <a className="pill pill-outline" href={item.demoUrl} target="_blank" rel="noreferrer">
-                  <span>Provala senza account</span>
-                </a>
+                {item.demoUrl && (
+                  <a className="pill pill-outline" href={item.demoUrl} target="_blank" rel="noreferrer">
+                    <span>Provala senza account</span>
+                  </a>
+                )}
               </div>
-              <p className="small muted creation-install">{item.install}</p>
+              {item.install && <p className="small muted creation-install">{item.install}</p>}
             </div>
           </li>
         ))}

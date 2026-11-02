@@ -23,7 +23,18 @@ export const intro = {
   ],
 }
 
-export const creations = [
+interface Creation {
+  name: string
+  description: string
+  stack: string[]
+  icon: string
+  appUrl: string
+  appLabel?: string
+  demoUrl?: string
+  install?: string
+}
+
+export const creations: Creation[] = [
   {
     name: 'Bere',
     description:
@@ -34,6 +45,15 @@ export const creations = [
     demoUrl: 'https://roberto2ciancio.github.io/bere-app/dev/',
     install:
       "Non serve uno store: su iPhone aprila in Safari e scegli Aggiungi alla schermata Home, su Android apri il menu di Chrome e scegli Installa app. La versione senza account è una demo: i dati restano sul tuo telefono.",
+  },
+  {
+    name: 'Controllo Sito',
+    description:
+      "Scrivi l'indirizzo di un sito, ottieni un voto e le cose da sistemare in ordine di urgenza, con i passaggi per risolverle. Gratuito, senza account: legge solo ciò che il sito mostra a qualsiasi visitatore.",
+    stack: ['React', 'TypeScript', 'Supabase Edge Functions'],
+    icon: 'https://roberto2ciancio.github.io/controllo-sito/icon.svg',
+    appUrl: 'https://roberto2ciancio.github.io/controllo-sito/',
+    appLabel: 'Apri lo strumento',
   },
 ]
 
