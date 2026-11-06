@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.roberto2ciancio.bere",
+      "sha256_cert_fingerprints": [
+        "96:E8:7E:71:F8:69:C7:6B:AA:98:BD:B7:47:81:65:78:59:B7:98:72:6E:D1:DD:BC:9E:22:94:12:C6:98:D1:60"
+      ]
+    }
+  }
+]
