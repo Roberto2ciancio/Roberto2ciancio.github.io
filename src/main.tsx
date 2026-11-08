@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
@@ -8,8 +8,14 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
   document.documentElement.classList.add('motion-ok')
 }
 
-createRoot(document.getElementById('root')!).render(
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 )
+const container = document.getElementById('root')!
+
+// The production build ships prerendered HTML (scripts/prerender.mjs): hydrate it.
+// In dev the container is empty, so render from scratch.
+if (container.hasChildNodes()) hydrateRoot(container, app)
+else createRoot(container).render(app)
