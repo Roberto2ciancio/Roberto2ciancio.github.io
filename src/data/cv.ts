@@ -55,6 +55,16 @@ export const creations: Creation[] = [
     appUrl: 'https://roberto2ciancio.github.io/controllo-sito/',
     appLabel: 'Apri lo strumento',
   },
+  {
+    name: 'Neon Arena',
+    description:
+      "Sparatutto 3D in prima persona che gira nel browser. In modalità Zombie affronti 15 ondate sempre più dure con nemici diversi, bonus e armi da potenziare; nel TCT online sfidi altri giocatori squadra contro squadra. Armeria con accessori, mappe a più piani e salvataggi con account.",
+    stack: ['TypeScript', 'Three.js', 'WebRTC', 'Web Audio', 'Supabase'],
+    icon: 'https://roberto2ciancio.github.io/neon-arena/icon.svg',
+    appUrl: 'https://roberto2ciancio.github.io/neon-arena/',
+    appLabel: 'Gioca ora',
+    install: 'Si gioca da computer con mouse e tastiera, senza installare nulla. Puoi entrare come ospite oppure creare un account per salvare i progressi.',
+  },
 ]
 
 export const experience = [
